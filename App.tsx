@@ -23,7 +23,7 @@ const App: React.FC = () => {
   const [renovationItems, setRenovationItems] = useState<RenovationItem[]>(INITIAL_RENOVATION_ITEMS);
 
   useEffect(() => {
-    const saved = localStorage.getItem('cria_data_v3');
+    const saved = localStorage.getItem('cria_data_v4');
     if (saved) {
       try {
         const parsed = JSON.parse(saved);
@@ -38,7 +38,7 @@ const App: React.FC = () => {
 
   useEffect(() => {
     const data: AppData = { renovationItems, lastUpdated: new Date().toISOString() };
-    localStorage.setItem('cria_data_v3', JSON.stringify(data));
+    localStorage.setItem('cria_data_v4', JSON.stringify(data));
   }, [renovationItems]);
 
   const handleImport = (data: AppData) => {
